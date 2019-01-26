@@ -77,6 +77,7 @@ $fg->save();
 $t = new Template();
 $t->name = 'TEMPLATE_NAME';
 $t->fieldgroup = $fg; 
+$t->pageLabelField = "fa-rocket";
 $t->save();
 
 // set template options

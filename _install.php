@@ -76,6 +76,7 @@ $fg->save();
 // new template using the fieldgroup and a template
 $t = new Template();
 $t->name = 'TEMPLATE_NAME';
+$t->label = 'TEMPLATE_LABEL';
 $t->fieldgroup = $fg; 
 $t->pageLabelField = 'fa-html5';
 $t->save();

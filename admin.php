@@ -29,7 +29,7 @@ $vars = [
 $template 	= "my-template";
 
 // selector
-$selector	= "template=$template, include=all";
+$selector	= "template=$template, include=all, sort=sort";
 $selector	.= ($this->input->get->status) ? ", status={$this->input->get->status}" : ", status!=trash";
 
 // items

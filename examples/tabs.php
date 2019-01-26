@@ -18,11 +18,6 @@ $tabs_arr = [
     ],
 ];
 
-// Trash
-$trashed        = $this->pages->find("template=$template, status=trash");
-$trashed_class  = $trashed->count < 1 ? "uk-hidden" : "";
-$trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
-
 // new item parent_id
 $parent_id = $this->pages->get("template=main-menu");
 
@@ -54,13 +49,5 @@ $parent_id = $this->pages->get("template=main-menu");
             Settings
         </a>
     </li>
-
-    <li class="ivm-trash-link <?= $trashed_class ?>" data-count="<?= $trashed->count ?>">
-        <a class="uk-text-danger" href="./trash/">
-            <i class="fa fa-trash"></i>
-            Trash <span>(<?= $trashed->count ?>)</span>
-        </a>
-    </li>
-
 
 </div>

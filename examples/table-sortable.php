@@ -32,7 +32,7 @@
                 $class = $item->isHidden() || $item->isUnpublished() ? "ivm-is-hidden" : "";
             ?>
 
-            <tr data-sort='<?= $item->sort ?>' data-id='<?= $item->id ?>' class="<?= $class ?>">
+            <tr class="ivm-ajax-parent" data-sort='<?= $item->sort ?>' data-id='<?= $item->id ?>' class="<?= $class ?>">
 
                 <td class="uk-table-shrink">
                     <div class="handle">

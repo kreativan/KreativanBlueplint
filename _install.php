@@ -77,6 +77,7 @@ $fg->save();
 $t = new Template();
 $t->name = 'TEMPLATE_NAME';
 $t->fieldgroup = $fg; 
+$t->pageLabelField = 'fa-html5';
 $t->save();
 
 // set template options
@@ -85,7 +86,6 @@ $t->noParents = '-1';
 $t->allowPageNum = '1';
 $t->urlSegments = '1';
 $t->tags = 'TEMPLATE_TAG';
-$t->pageLabelIcon = 'fa-rocket';
 $t->parentTemplates = array(wire('templates')->get('PARENT_TEMPLATE_NAME')); // allowedForParents
 $t->childTemplates = array(wire('templates')->get('CHILD_TEMPLATE_NAME')); // allowedForChildren
 $t->save();

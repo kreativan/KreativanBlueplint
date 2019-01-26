@@ -39,8 +39,23 @@ $items 		= $this->pages->find($selector);
 $trashed    = $this->pages->find("template=$template, status=trash");
 
 
-foreach($items as $item) {
-	
-	// do something
-	
-}
+/* =========================================================== 
+    Admin UI
+=========================================================== */
+?>
+
+<?php
+    include("./inc/tabs.php");
+?>
+
+<div class="ivm-white ivm-border ivm-box-shadow">
+
+    <?php 
+        if($items->count) {
+            include("./inc/table-sortable.php"); 
+        } else {
+            echo "<div class='uk-padding'><h3>No items to display</h3></div>";
+        }
+    ?>
+
+</div>

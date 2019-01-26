@@ -68,17 +68,13 @@
                     <?= ($item->km_dropdown->count) ? $item->km_dropdown->count : "-"; ?>
                 </td>
 
-                <td class="uk-text-right">
+                <td class="ivm-actions ivm-actions--circle uk-text-right">
 
-                    <?php
-                        $tooltip = $item->isUnpublished() ? "Publish" : "Unpublish";
-                    ?>
-
-                    <a href="#" class="ivm-ajax-button" title="<?= $tooltip ?>" uk-tooltip 
+                    <a href="#" class="ivm-ajax-button" title="Publish / Unpublish" uk-tooltip 
                         data-id="<?= $item->id ?>" 
                         data-action="publish"
                     >
-                        <i class="fa fa-toggle-on"></i>
+                        <i class="fa fa-check"></i>
                     </a>
 
                     <a href="#" class="ivm-ajax-button" title="Trash" uk-tooltip 

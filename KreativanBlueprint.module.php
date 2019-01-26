@@ -224,6 +224,7 @@ class KreativanBlueprint extends Process {
 	 */
 	public function ___install() {
 		parent::___install(); // always remember to call parent method
+		// include("./_install.php");
 	}
 
 	/**
@@ -236,6 +237,7 @@ class KreativanBlueprint extends Process {
 	 */
 	public function ___uninstall() {
 		parent::___uninstall(); // always remember to call parent method
+		// include("./_uninstall.php");
 	}
 
 }

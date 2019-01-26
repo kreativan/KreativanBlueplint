@@ -46,14 +46,14 @@
                     </a>
                 </td>
 
-                <td class="uk-text-muted">
+                <td class="uk-text-muted uk-text-small">
                     <em><?= $item->km_link_type->title ?></em>
                 </td>
 
                 <td class="uk-text-muted uk-text-small">
                     <?php
-                        if($item->km_link_type == '2' && !empty($item->km_page_link)) {
-                            $page_link = $this->pages->get("id={$item->km_page_link}");
+                        if($item->km_link_type == '2' && !empty($item->km_page)) {
+                            $page_link = $this->pages->get("id={$item->km_page}");
                             if($page_link->parent->id == "1") {
                                 echo "/{$page_link->name}/";
                             } else {
@@ -64,7 +64,7 @@
                     <?= ($item->km_link_type == '3') ? "<em>{$item->km_link}</em>" : ""; ?>
                 </td>
 
-                <td class="uk-text-center uk-text-muted">
+                <td class="uk-text-center uk-text-muted uk-text-small">
                     <?= ($item->km_dropdown->count) ? $item->km_dropdown->count : "-"; ?>
                 </td>
 

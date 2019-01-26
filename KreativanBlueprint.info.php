@@ -39,6 +39,9 @@ $info = array(
     
     'singular' => true,
     'autoload' => true, // need for Redirect
+	
+	// dependency
+	'requires' => "KreativanHelper",
 
 	// for more options that you may specify here, see the file: /wire/core/Process.php
 	// and the file: /wire/core/Module.php

@@ -59,3 +59,8 @@ $trashed    = $this->pages->find("template=$template, status=trash");
     ?>
 
 </div>
+
+<!-- Pagination -->
+<div class="uk-margin-top" style="margin-left:10px;">
+    <?php echo $items->renderPager(); ?>
+</div>

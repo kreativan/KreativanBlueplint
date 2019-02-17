@@ -14,13 +14,6 @@
 $adminURL 		= $this->config->urls->admin;
 $moduleURL 		= $this_module->page->url;
 
-// variable that u may want to pass to the includes
-$vars = [
-    "this_module"       => $this_module,
-    "moduleURL"         => $moduleURL,
-    "adminURL"          => $adminURL,
-    "module_edit_URL"   => $module_edit_URL,
-];
 
 /* =========================================================== 
     Selector

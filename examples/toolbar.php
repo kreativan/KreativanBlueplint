@@ -40,12 +40,16 @@ $status_options = array(
                 </select>
             </div>
 
+            <div class="uk-width-expand@m">
+                <input class="uk-input" type="text" name="q" placeholder="Search..." value="<?= $this->input->get->q ?>" />
+            </div>
+
             <div class="uk-width-medium@m">
                 <select class="uk-select" name="status" onchange="this.form.submit()">
-                    <option value="">- Select Form -</option>
-                    <?php foreach($items as $item) :?>
-                        <option value="<?= $item->id ?>" <?= ($this->input->get->form == $item->id) ? "selected" : "" ?>>
-                            <?= $item->title ?>
+                    <option value="">- Select Status -</option>
+                    <?php foreach($status_options as $value => $label) :?>
+                        <option value="<?= $value ?>" <?= ($this->input->get->status == $value) ? "selected" : "" ?>>
+                            <?= $label ?>
                         </option>
                     <?php endforeach?>
                 </select>

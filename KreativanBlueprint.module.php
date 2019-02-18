@@ -28,7 +28,7 @@ class KreativanBlueprint extends Process {
         $this->breadcrumb('./', 'Kreativan Blueprint');
 
         // include admin file
-        return $this->includeAdminFile("admin.php", "kreativan-blueprint");
+        return $this->includeAdminFile("admin.php", "main");
 
     }
 

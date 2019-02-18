@@ -19,17 +19,16 @@ $moduleURL 		= $this_module->page->url;
     Selector
 =========================================================== */
 
-$template 	= "my-template";
+$tmpl = "my-template";
 
 // selector
-$selector	= "template=$template, include=all, sort=sort";
-$selector	.= ($this->input->get->status) ? ", status={$this->input->get->status}" : ", status!=trash";
+$selector	= "template=$tmpl, include=all, sort=sort, status!=trash";
 
 // items
 $items 		= $this->pages->find($selector);
 
 // trashed items
-$trashed    = $this->pages->find("template=$template, status=trash");
+$trashed    = $this->pages->find("template=$tmpl, status=trash");
 
 
 /* =========================================================== 
@@ -44,10 +43,10 @@ $trashed    = $this->pages->find("template=$template, status=trash");
 <div class="ivm-white ivm-border ivm-box-shadow">
 
     <?php 
-        if($items->count) {
+        if($page_name == "main") {
             include("./inc/table-sortable.php"); 
-        } else {
-            echo "<div class='uk-padding'><h3>No items to display</h3></div>";
+        } elseif($page_name == "trash") {
+            include("./inc/table-trash.php"); 
         }
     ?>
 

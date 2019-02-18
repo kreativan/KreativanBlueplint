@@ -18,14 +18,13 @@
         <tr>
             <th></th>
             <th>Title</th>
-            <th>Link Type</th>
-            <th>Link</th>
-            <th class="uk-text-center">Dropdown</th>
+            <th>ID / Link</th>
+            <th>Type</th>
             <th></th>
         </tr>
     </thead>  
 
-    <tbody id="ivm-sortable">
+    <tbody>
         <?php foreach($items as $item):?>
 
             <?php
@@ -35,9 +34,7 @@
             <tr class="<?= $class ?> ivm-ajax-parent" data-sort='<?= $item->sort ?>' data-id='<?= $item->id ?>' class="<?= $class ?>">
 
                 <td class="uk-table-shrink">
-                    <div class="handle">
-                        <i class='fa fa-bars'></i>
-                    </div>  
+                    <i class="fa fa-<?= $item->template->getIcon();?>">
                 </td>
 
                 <td>
@@ -47,25 +44,11 @@
                 </td>
 
                 <td class="uk-text-muted uk-text-small">
-                    <em><?= $item->km_link_type->title ?></em>
+                    <em>#<?= $item->name ?></em>
                 </td>
 
                 <td class="uk-text-muted uk-text-small">
-                    <?php
-                        if($item->km_link_type == '2' && !empty($item->km_page)) {
-                            $page_link = $this->pages->get("id={$item->km_page}");
-                            if($page_link->parent->id == "1") {
-                                echo "/{$page_link->name}/";
-                            } else {
-                                echo "/{$page_link->parent->name}/{$page_link->name}/";
-                            }
-                        }
-                    ?>
-                    <?= ($item->km_link_type == '3') ? "<em>{$item->km_link}</em>" : ""; ?>
-                </td>
-
-                <td class="uk-text-center uk-text-muted uk-text-small">
-                    <?= ($item->km_dropdown->count) ? $item->km_dropdown->count : "-"; ?>
+                    <em><?= $item->template ?></em>
                 </td>
 
                 <td class="ivm-actions ivm-actions--circle uk-text-right">
@@ -92,3 +75,7 @@
     </tbody>
 
 </table>
+
+<?php
+if($items->count < 1) echo "<div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
+?>

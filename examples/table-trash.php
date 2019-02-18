@@ -25,7 +25,7 @@
     </thead> 
 
     <tbody>
-        <?php foreach($items as $item):?>
+        <?php foreach($trashed as $item):?>
             <tr>
 
                 <td>
@@ -81,3 +81,8 @@
 
 
 </table>
+
+
+<?php
+if($trashed->count < 1) echo "<div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
+?>

@@ -11,8 +11,8 @@
 
 // TABS
 $tabs_arr = [
-    "main-menu" => [
-        "title" => "Main Menu",
+    "main" => [
+        "title" => "Modals & Offcanvas",
         "icon" => "",
         "url" => $page->url,
     ],
@@ -20,6 +20,10 @@ $tabs_arr = [
 
 // new item parent_id
 $parent_id = $this->pages->get("template=main-menu");
+
+// Trash
+$trashed_class  = $trashed->count < 1 ? "uk-hidden" : "";
+$trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
 
 ?>
 
@@ -34,14 +38,19 @@ $parent_id = $this->pages->get("template=main-menu");
         </li>
     <?php endforeach;?> 
 
-    <?php if($page_name == "main-menu") :?>
-        <li>
-            <a href="<?= $this_module->newPageLink($parent_id) ?>">
-                <i class="fa fa-plus-circle"></i>
-                Add New
-            </a>
-        </li>
-    <?php endif;?>
+    <li class="ivm-trash-link <?= $trashed_class ?>" data-count="<?= $trashed->count ?>">
+        <a class="uk-text-danger" href="./trash/">
+            <i class="fa fa-trash"></i>
+            Trash <span>(<?= $trashed->count ?>)</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="<?= $this_module->newPageLink($parent_id) ?>">
+            <i class="fa fa-plus-circle"></i>
+            Add New
+        </a>
+    </li>
 
     <li>
         <a href="<?= $module_edit_URL ?>">
@@ -49,5 +58,6 @@ $parent_id = $this->pages->get("template=main-menu");
             Settings
         </a>
     </li>
+    
 
 </div>

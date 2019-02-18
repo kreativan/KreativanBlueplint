@@ -14,7 +14,7 @@
 
 <table class="ivm-table uk-table uk-table-striped uk-table-middle uk-margin-remove">
 
-    <?php if($items->count) :?>
+    <?php if($trashed->count) :?>
         <thead>
             <tr>
                 <th>Title</th>

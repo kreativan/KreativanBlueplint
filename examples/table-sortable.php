@@ -14,15 +14,17 @@
 
 <table class="ivm-table uk-table uk-table-striped uk-table-middle uk-margin-remove">
 
-    <thead>
-        <tr>
-            <th></th>
-            <th>Title</th>
-            <th>ID / Link</th>
-            <th>Type</th>
-            <th></th>
-        </tr>
-    </thead>  
+    <?php if($items->count) :?>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>ID / Link</th>
+                <th>Type</th>
+                <th></th>
+            </tr>
+        </thead>  
+    <?php endif;?>  
 
     <tbody>
         <?php foreach($items as $item):?>

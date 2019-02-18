@@ -51,13 +51,15 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
             Add New
         </a>
     </li>
-
-    <li>
-        <a href="<?= $module_edit_URL ?>">
-            <i class="fa fa-cog"></i>
-            Settings
-        </a>
-    </li>
+	
+	<?php if($this->user->isSuperuser()) :?>
+		<li>
+			<a href="<?= $module_edit_URL ?>">
+				<i class="fa fa-cog"></i>
+				Settings
+			</a>
+		</li>
+	<?php endif;?>	
     
 
 </div>

@@ -74,7 +74,7 @@
                         data-id="<?= $item->id ?>" 
                         data-action="publish"
                     >
-                        <i class="fa fa-check"></i>
+                        <i class="fa fa-toggle-on"></i>
                     </a>
 
                     <a href="#" class="ivm-ajax-button" title="Trash" uk-tooltip 

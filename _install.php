@@ -59,7 +59,7 @@ $fields_array = ["title", "FIELD_NAME_1", "FIELD_NAME_2", "FIELD_NAME_3"];
 $helper->createRepeater("REPEATER_NAME", "REPEATER_LABEL", $fields_array, "{title}", "FIELD_TAG");
 
 // Set fields options for repeater
-$helper->setRepeaterFieldOptions("FIELD_NAME_1", "FIELD_NAME", ["showIf" => "link_type=2"]);
+$helper->setRepeaterFieldOptions("REPEATER_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
 
 
 /* =========================================================== 

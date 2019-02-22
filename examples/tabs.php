@@ -13,7 +13,7 @@
 $tabs_arr = [
     "main" => [
         "title" => "Modals & Offcanvas",
-        "icon" => "",
+        "icon" => "cog",
         "url" => $page->url,
     ],
 ];
@@ -33,6 +33,9 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
     <?php foreach($tabs_arr as $key => $value) :?>
         <li class="<?= ($page_name == $key) ? "uk-active" : ""; ?>">
             <a href="<?= $value["url"]?>">
+				<?php if(!empty($value["icon"])):?>
+                    <i class="fa fa-<?= $value["icon"] ?>"></i>
+                <?php endif;?>
                 <?= $value["title"] ?>
             </a>
         </li>

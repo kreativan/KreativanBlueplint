@@ -128,12 +128,12 @@ $t->fields->save();
  * 
  */
 
+ // get template
+$template = $page->template;
+
 // get existing field from the template, 
 // we will insert new field before or after this field
-$existingField = $page->template->fieldgroup->fields->get("body");
- 
-// get template
-$template = $page->template;
+$existingField = $template->fieldgroup->fields->get("body");
  
 // new field that we want to insert
 $new_field = $fields->get("headline");
@@ -141,6 +141,11 @@ $new_field = $fields->get("headline");
 // insert new field before existing one
 $template->fieldgroup->insertBefore($new_field, $existingField);
 $template->fieldgroup->save();
+
+// 
+//	Or use KreativanHelper
+//
+$helper->addTemplateField("TEMPLATE_NAME", "NEW_FIELD", "EXISTING_FIELD", "before");
 
 
 /* =========================================================== 

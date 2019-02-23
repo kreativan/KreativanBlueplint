@@ -28,7 +28,7 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
 ?>
 
 
-<div class="ivm-tabs uk-tab uk-position-relative">
+<ul class="ivm-tabs uk-tab uk-position-relative">
 
     <?php foreach($tabs_arr as $key => $value) :?>
         <li class="<?= ($page_name == $key) ? "uk-active" : ""; ?>">
@@ -65,4 +65,4 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
 	<?php endif;?>	
     
 
-</div>
+</ul>

@@ -27,7 +27,7 @@
 
     <tbody>
         <?php foreach($trashed as $item):?>
-            <tr>
+            <tr class="ivm-ajax-parent">
 
 
                 <td>

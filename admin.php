@@ -6,8 +6,8 @@
  *  @copyright 2018 Kreativan
  *
  *  @var this_module
- *	@method $this_module->pageEditLink($id)
- *	@method $this_module->newPageLink($parent_id)
+ *	@method $helper->pageEditLink($id)
+ *	@method $helper->newPageLink($parent_id)
  *
 */
 

@@ -3,12 +3,12 @@
  *  _install.php
  *
  *  @author Ivan Milincic <kreativan@outlook.com>
- *  @copyright 2018 Kreativan
+ *  @copyright 2019 Kreativan
  *
  *
 */
 
-$helper = $this->modules->get("KreativanHelper");
+$api = $this->modules->get("KreativanApi");
 
 /* =========================================================== 
     1. Fields
@@ -47,7 +47,7 @@ $f->save();
  */
 
 $options = ["Option 1", "Option 2", "Option 3"];
-$helper->createOptionsField("InputfieldCheckboxes", "FIELD_NAME", "FIELD_LABEL", $options, "FIELD_TAG");
+$api->createOptionsField("InputfieldCheckboxes", "FIELD_NAME", "FIELD_LABEL", $options, "FIELD_TAG");
 
 
 /**
@@ -56,10 +56,10 @@ $helper->createOptionsField("InputfieldCheckboxes", "FIELD_NAME", "FIELD_LABEL",
  */
 
 $fields_array = ["title", "FIELD_NAME_1", "FIELD_NAME_2", "FIELD_NAME_3"];
-$helper->createRepeater("REPEATER_NAME", "REPEATER_LABEL", $fields_array, "{title}", "FIELD_TAG");
+$api->createRepeater("REPEATER_NAME", "REPEATER_LABEL", $fields_array, "{title}", "FIELD_TAG");
 
 // Set fields options for repeater
-$helper->setRepeaterFieldOptions("REPEATER_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
+$api->setRepeaterFieldOptions("REPEATER_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
 
 
 /* =========================================================== 
@@ -111,7 +111,7 @@ $item = [
     "page_title" => "ITEM_PAGE_TITLE",
 ];
 
-$helper->createTemplateStructure($main, $item);
+$api->createTemplateStructure($main, $item);
 
 
 /* =========================================================== 
@@ -145,7 +145,7 @@ $template->fieldgroup->save();
 // 
 //	Or use KreativanHelper
 //
-$helper->addTemplateField("TEMPLATE_NAME", "NEW_FIELD", "EXISTING_FIELD", "before");
+$api->addTemplateField("TEMPLATE_NAME", "NEW_FIELD", "EXISTING_FIELD", "before");
 
 
 /* =========================================================== 
@@ -159,7 +159,7 @@ $f->columnWidth = "50";
 $this->fields->saveFieldgroupContext($f, $t->fieldgroup);
 
 // using KreativanHelper
-$helper->setFieldOptions("TEMPLATE_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
+$api->setFieldOptions("TEMPLATE_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
 
 
 /* =========================================================== 

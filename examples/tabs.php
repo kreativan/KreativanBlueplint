@@ -49,7 +49,7 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
     </li>
 
     <li>
-        <a href="<?= $this_module->newPageLink($parent_id) ?>">
+        <a href="<?= $helper->newPageLink($parent_id) ?>">
             <i class="fa fa-plus-circle"></i>
             Add New
         </a>

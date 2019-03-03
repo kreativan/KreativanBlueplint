@@ -31,7 +31,7 @@
 
 
                 <td>
-                    <a href="<?= $this_module->pageEditLink($item->id) ?>">
+                    <a href="<?= $helper->pageEditLink($item->id) ?>">
                         <?= $item->title ?>
                     </a>
                 </td>

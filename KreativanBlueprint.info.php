@@ -38,7 +38,7 @@ $info = array(
     ),
     
     'singular' => true,
-    'autoload' => true, // need for Redirect
+    'autoload' => false, // need for Redirect
 	
 	// dependency
 	'requires' => "KreativanHelper",

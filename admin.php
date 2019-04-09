@@ -4,10 +4,16 @@
  *
  *  @author Ivan Milincic <kreativan@outlook.com>
  *  @copyright 2018 Kreativan
+ *  @link http://www.kreativan.net
  *
- *  @var this_module
- *	@method $helper->pageEditLink($id)
- *	@method $helper->newPageLink($parent_id)
+ *  @var Module|object $this_module
+ *  @var string $page_name
+ *  @var string $module_edit_URL
+ *  @var Module|object $helper
+ *  
+ *  Use helper methods:
+ *	$helper->pageEditLink($id)
+ *	$helper->newPageLink($parent_id)
  *
 */
 

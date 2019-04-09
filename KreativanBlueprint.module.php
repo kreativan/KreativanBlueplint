@@ -3,7 +3,8 @@
  *  KreativanBlueprint Module
  *
  *  @author Ivan Milincic <kreativan@outlook.com>
- *  @copyright 2019 Kreativan
+ *  @copyright 2019 kraetivan.net
+ *  @link 2019 http://www.kraetivan.net
  *
  *
 */
@@ -19,7 +20,7 @@ class KreativanBlueprint extends Process {
     /**
      *  Execute
      *  Module Page
-     *  @method includeAdminFile()
+     *  @see includeAdminFile()
      * 
      */
     public function ___execute() {
@@ -41,7 +42,8 @@ class KreativanBlueprint extends Process {
     /**
 	 *	Page Edit
      *  This is custom page edit for this module
-     *  Edit URL @example admin/MODULE_URL/edit/id?=PAGE_ID
+     * 
+     *  Edit URL example: admin/MODULE_URL/edit/id?=PAGE_ID
      * 
      */
     public function executeEdit() {

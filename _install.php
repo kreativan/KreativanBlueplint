@@ -42,7 +42,7 @@ $f->tags = "FIELD_TAG";
 $f->save();
 
 /**
- *  Options Field (KreativanHelper)
+ *  Options Field (KreativanApi)
  * 
  */
 
@@ -51,7 +51,7 @@ $api->createOptionsField("InputfieldCheckboxes", "FIELD_NAME", "FIELD_LABEL", $o
 
 
 /**
- *  Repeater Field (KreativanHelper)
+ *  Repeater Field (KreativanApi)
  * 
  */
 
@@ -93,7 +93,7 @@ $t->save();
 
 
 /**
- *  Template Structire (KreativanHelper)
+ *  Template Structire (KreativanApi)
  * 
  */
 $main = [
@@ -143,7 +143,7 @@ $template->fieldgroup->insertBefore($new_field, $existingField);
 $template->fieldgroup->save();
 
 // 
-//	Or use KreativanHelper
+//	Or use KreativanApi
 //
 $api->addTemplateField("TEMPLATE_NAME", "NEW_FIELD", "EXISTING_FIELD", "before");
 
@@ -158,7 +158,7 @@ $f = $t->fieldgroup->getField('FIELD_NAME', true);
 $f->columnWidth = "50";
 $this->fields->saveFieldgroupContext($f, $t->fieldgroup);
 
-// using KreativanHelper
+// using KreativanApi
 $api->setFieldOptions("TEMPLATE_NAME", "FIELD_NAME", ["showIf" => "link_type=2"]);
 
 

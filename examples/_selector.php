@@ -1,59 +1,45 @@
 <?php
 /**
- *  Blog Posts Selector
+ *  _seselctor.php
  *
- *  @author Ivan Milincic <lokomotivan@gmail.com>
- *  @copyright 2018 Ivan Milincic
+ *  @author Ivan Milincic <kreativan@outlook.com>
+ *  @copyright 2019 kraetivan.net
+ *  @link http://www.kraetivan.net
  *
  *
 */
 
-// get limit for another module settins
-$limit = $this->modules->get('SoftnaBlog')->admin_limit;
-if(isset($_GET['limit']) && $_GET['limit'] != '') {
-    $limit = $_GET['limit'];
-    $this->input->whitelist('limit', $limit);
+
+$template = "comment";
+
+// Selector
+$selector = "template=$template, sort=-created, limit=20";
+
+
+// Status
+if($this->input->get->status) {
+    $status = $this->input->get->status;
+    $this->input->whitelist('status', $status);
+    if($status != "active") {
+        $selector .= ", status=$status";
+    }
+} else {
+    $selector .= ", include=all, status!=trash";
 }
 
-$sort = '-created';
-if(isset($_GET['sort']) && $_GET['sort'] != '') {
-    $sort = $_GET['sort'];
-    $this->input->whitelist('sort', $sort);
-}
 
-// Include all by default
-$status = 'status!=trash,include=all,';
-// if active leave status selector empty
-if(isset($_GET['status']) && $_GET['status'] == 'active') {
-    $status = "";
-}
-// if sattus is set add status selector
-elseif(isset($_GET['status']) && $_GET['status'] != '') {
-    $get_status = $_GET['status'];
-    $this->input->whitelist('status', $get_status);
-    $status = "status=$get_status,";
-}
-
-// start selector
-$selector = "template=blog-post,{$status}limit={$limit},sort={$sort}";
-
-// check for aditional GET avriables and update selector
-if(isset($_GET['q']) && $_GET['q'] != '') {
+// Search
+if($this->input->get->q) {
     $q = $this->input->get->q;
     $this->input->whitelist('q', $q);
     $selector .= ",title*=$q";
 }
 
-// category
-if(isset($_GET['category']) && $_GET['category'] != '') {
-    $category_id = $_GET['category'];
-    $category = $this->pages->get($category_id);
-    $this->input->whitelist('status', $category);
-    $selector .= ",blog_categories=$category";
-}
-
-// find pages
+// items
 $items = $this->pages->find($selector);
 
+// trashed items
+$trashed = $this->pages->find("template=$template, status=trash");
+
 // render pagination results
-$pagination = $items->renderPager();
+// $pagination = $items->renderPager();

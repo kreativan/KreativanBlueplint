@@ -27,32 +27,11 @@ $table->headerRow([
     'Email',
     'IP',
     'Date',
-    'Actions'
+    ['Actions', 'uk-text-right']
 ]);
 
 // Table Data
 foreach($this_module->itemsTrash() as $item) {
-
-    $title = $this->pages->get($item->page_id)->title;
-    $related_page = $this->sanitizer->truncate($title, 20);
-
-    $rating = (!empty($item->rating) &&  $item->rating > 0) ?  $item->rating : "-";
-
-    $actions = "
-        <a href='#' class='ivm-ajax-button' title='Restore' uk-tooltip
-            data-id='$item->id'
-            data-action='restore'
-        >
-            <i class='fa fa-refresh uk-text-primary'></i>
-        </a>
-
-        <a href='#' class='ivm-ajax-button uk-text-danger' title='Delete' uk-tooltip
-            data-id='$item->id'
-            data-action='delete'
-        >
-            <i class='fa fa-trash'></i>
-        </a>
-    ";
 
 
     //Add Row
@@ -66,7 +45,7 @@ foreach($this_module->itemsTrash() as $item) {
             [$item->email, "uk-text-small"],
             [$item->ip, "uk-text-small"],
             [date("d F y h:s:i A", $item->created), "uk-text-small"],
-            [$actions, 'ivm-pw-table-actions'],
+            [$helper->tableActions($item), 'uk-text-right ivm-pw-table-actions'],
 
         ],
         [

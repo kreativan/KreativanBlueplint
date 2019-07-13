@@ -14,6 +14,8 @@
  *  Use helper methods:
  *	$helper->pageEditLink($id)
  *	$helper->newPageLink($parent_id)
+ *  $helper->tableActions($item)
+ *  $helper->tableActionsTrash($item)
  *
 */
 
@@ -25,13 +27,13 @@ include("./inc/tabs.php");
 
 ?>
 
-<div class="ivm-white ivm-border ivm-box-shadow">
+<div class="ivm-pw-table">
 
     <?php 
         if($page_name == "main") {
-            include("./inc/table-sortable.php"); 
+            include("./inc/pw-table.php"); 
         } elseif($page_name == "trash") {
-            include("./inc/table-trash.php"); 
+            include("./inc/pw-table-trash.php"); 
         }
     ?>
 

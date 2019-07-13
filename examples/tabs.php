@@ -22,7 +22,7 @@ $tabs_arr = [
 $parent_id = $this->pages->get("template=main-menu");
 
 // Trash
-$trashed_class  = $trashed->count < 1 ? "uk-hidden" : "";
+$trashed_class  = $this_module->itemsTrash()->count < 1 ? "uk-hidden" : "";
 $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
 
 ?>
@@ -41,10 +41,10 @@ $trashed_class  = ($page_name == "trash") ? " uk-active" : $trashed_class;
         </li>
     <?php endforeach;?> 
 
-    <li class="ivm-trash-link <?= $trashed_class ?>" data-count="<?= $trashed->count ?>">
+    <li class="ivm-trash-link <?= $trashed_class ?>" data-count="<?= $this_module->itemsTrash()->count ?>">
         <a class="uk-text-danger" href="./trash/">
             <i class="fa fa-trash"></i>
-            Trash <span>(<?= $trashed->count ?>)</span>
+            Trash <span>(<?= $this_module->itemsTrash()->count ?>)</span>
         </a>
     </li>
 

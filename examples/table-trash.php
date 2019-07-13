@@ -5,7 +5,6 @@
  *  @author Ivan Milincic <kreativan@outlook.com>
  *  @copyright 2018 Kreativan
  *
- *  @var items
  *
 */
 
@@ -14,7 +13,7 @@
 
 <table class="ivm-table uk-table uk-table-striped uk-table-middle uk-margin-remove">
 
-    <?php if($trashed->count) :?>
+    <?php if($this_module->itemsTrash()->count) :?>
         <thead>
             <tr>
                 <th>Title</th>
@@ -72,5 +71,5 @@
 
 
 <?php
-if($trashed->count < 1) echo "<hr><div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
+if($this_module->itemsTrash() < 1) echo "<hr><div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
 ?>

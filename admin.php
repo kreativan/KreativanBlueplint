@@ -21,29 +21,8 @@ $adminURL 		= $this->config->urls->admin;
 $moduleURL 		= $this_module->page->url;
 
 
-/* =========================================================== 
-    Selector
-=========================================================== */
+include("./inc/tabs.php");
 
-$tmpl = "my-template";
-
-// selector
-$selector	= "template=$tmpl, include=all, sort=sort, status!=trash";
-
-// items
-$items 		= $this->pages->find($selector);
-
-// trashed items
-$trashed    = $this->pages->find("template=$tmpl, status=trash");
-
-
-/* =========================================================== 
-    Admin UI
-=========================================================== */
-?>
-
-<?php
-    include("./inc/tabs.php");
 ?>
 
 <div class="ivm-white ivm-border ivm-box-shadow">
@@ -60,5 +39,5 @@ $trashed    = $this->pages->find("template=$tmpl, status=trash");
 
 <!-- Pagination -->
 <div class="uk-margin-top" style="margin-left:10px;">
-    <?php echo $items->renderPager(); ?>
+    <?php echo $this_module->items()->renderPager(); ?>
 </div>

@@ -5,7 +5,6 @@
  *  @author Ivan Milincic <kreativan@outlook.com>
  *  @copyright 2018 Kreativan
  *
- *  @var items
  *
 */
 
@@ -14,7 +13,7 @@
 
 <table class="ivm-table uk-table uk-table-striped uk-table-middle uk-margin-remove">
 
-    <?php if($items->count) :?>
+    <?php if($this_module->items()->count) :?>
         <thead>
             <tr>
                 <th></th>
@@ -27,7 +26,7 @@
     <?php endif;?>  
 
     <tbody>
-        <?php foreach($items as $item):?>
+        <?php foreach($this_module->items() as $item):?>
 
             <?php
                 $class = $item->isHidden() || $item->isUnpublished() ? "ivm-is-hidden" : "";

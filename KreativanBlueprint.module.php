@@ -50,6 +50,53 @@ class KreativanBlueprint extends Process {
         return $this->modules->get("KreativanHelper")->adminPageEdit();
     }
 	
+	/**
+	 *	Get Items
+	 *
+	 */
+	public function items() {
+		
+		$template = "comment";
+
+		// Selector
+		$selector = "template=$template, sort=-created, limit=20";
+
+
+		// Status
+		if($this->input->get->status) {
+			$status = $this->input->get->status;
+			$this->input->whitelist('status', $status);
+			if($status != "active") {
+				$selector .= ", status=$status";
+			}
+		} else {
+			$selector .= ", include=all, status!=trash";
+		}
+
+		// Search
+		if($this->input->get->q) {
+			$q = $this->input->get->q;
+			$this->input->whitelist('q', $q);
+			$selector .= ",title*=$q";
+		}
+
+		// items
+		$items = $this->pages->find($selector);
+		
+		return $items;
+
+	}
+	
+	/**
+	 *	Get Trashed Items
+	 *
+	 */
+	public function itemsTrash() {
+		$template = "comment";
+		$trashed = $this->pages->find("template=$template, status=trash");
+		return $trashed;
+	}
+	
 
 	/**
 	 * Called only when your module is installed

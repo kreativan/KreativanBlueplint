@@ -48,7 +48,7 @@ foreach($this_module->items() as $item) {
         [
             "class" => $item->isUnpublished() ? "ivm-ajax-parent ivm-is-hidden" : "ivm-ajax-parent", // <tr> class
             "attrs" => ["data-id" => "$item->id"] ,// <tr> attr
-        ],
+        ]
     );
 
 }

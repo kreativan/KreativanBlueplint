@@ -9,8 +9,12 @@
  *
 */
 
-class KreativanBlueprint extends Process {
+class KreativanBlueprint extends Process implements WirePageEditor {
 	
+	// Need it for WirePageEditor
+	public function getPage() {
+		return $this->page; 
+	}
 	
 	public function init() {
         parent::init(); // always remember to call the parent init

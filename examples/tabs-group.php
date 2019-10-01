@@ -43,14 +43,13 @@
     </li>
 
     <li class="uk-flex uk-flex-middle">
-        <button class="ivm-group-action-button uk-button uk-button-link uk-height-1-1 uk-padding-small uk-padding-remove-vertical" 
-            type="submit" 
-            form="group-actions" 
-            name="admin_action_group_clone" 
-            value="1" 
+        <button class="ivm-group-action-button uk-button uk-button-link uk-height-1-1 uk-padding-small uk-padding-remove-vertical"
             title="Clone" 
             uk-tooltip
             disabled
+            data-form="#group-actions"
+            data-action="admin_action_group_clone"
+            onclick="formSubmitConfirm()"
         >
             <i class="fa fa-copy"></i>
         </button>
@@ -58,13 +57,12 @@
 
     <li class="uk-flex uk-flex-middle">
         <button class="ivm-group-action-button uk-button uk-button-link uk-height-1-1 uk-padding-small uk-padding-remove-vertical" 
-            type="submit" 
-            form="group-actions" 
-            name="admin_action_group_delete" 
-            value="1" 
             title="Delete" 
             uk-tooltip
             disabled
+            data-form="#group-actions"
+            data-action="admin_action_group_delete"
+            onclick="formSubmitConfirm()"
         >
             <i class="fa fa-trash"></i>
         </button>

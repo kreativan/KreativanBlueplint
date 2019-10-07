@@ -53,6 +53,8 @@ foreach($this_module->items() as $item) {
 
 }
 
+// Render Pagination
+$this_module->items()->renderPager();
 
 if($this_module->items()->count < 1) {
     $table->row([

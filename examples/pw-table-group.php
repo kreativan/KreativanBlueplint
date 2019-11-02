@@ -19,6 +19,9 @@ $table->set("class", "uk-table-striped uk-table-middle");
 // $table->set("id", "ivm-pw-data-table");
 // $table->set("caption", "PW Table Caption");
 
+// Select All Input Checkbox
+$select_all = "<input id='ivm-checkbox-all' type='checkbox' name='select_all' value='1' />";
+
 // Table Heading
 $table->headerRow([
     '',
@@ -26,7 +29,7 @@ $table->headerRow([
     'Widget',
     'Name',
     'ID',
-    'Select',
+    [$select_all, 'uk-text-right sorter-false']
 ]);
 
 // Table Data

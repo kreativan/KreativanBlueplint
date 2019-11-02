@@ -31,12 +31,13 @@
     <li class="uk-flex uk-flex-middle">
         <button class="ivm-group-action-button uk-button uk-button-link uk-height-1-1 uk-padding-small uk-padding-remove-vertical" 
             type="submit" 
-            form="group-actions" 
-            name="admin_action_group_publish" 
+            data-form="#group-actions" 
+            data-action="admin_action_group_publish" 
             value="1" 
             title="Publish / Unpublish" 
             uk-tooltip
             disabled
+            onclick="formSubmitConfirm()"
         >
             <i class="fa fa-toggle-on"></i>
         </button>

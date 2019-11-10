@@ -40,11 +40,12 @@ class KreativanBlueprintConfig extends ModuleConfig {
 		 * 	Options
 		 *
 		 */
-		$options = $this->wire('modules')->get("InputfieldFieldset");
-		$options->label = __("Options");
+		 
+		$SET_options = $this->wire('modules')->get("InputfieldFieldset");
+		$SET_options->label = __("Options");
 		//$options->collapsed = 1;
-		$options->icon = "fa-cog";
-		$wrapper->add($options);
+		$SET_options->icon = "fa-cog";
+		$wrapper->add($SET_options);
 
 
 			// radio
@@ -60,15 +61,41 @@ class KreativanBlueprintConfig extends ModuleConfig {
 			$f->optionColumns = 1;
 			$f->columnWidth = "100%";
 			$f->collapsed = 0;
-			$options->add($f);
+			$SET_options->add($f);
 
 
 		// render fieldset
-		$inputfields->add($options);
+		$inputfields->add($SET_options);
+		
+		
+		
+		/**
+		 * 	Buttons / Actions
+		 *
+		 */
+		
+		$thisUrl = "edit?name=KreativanBlueprint&collapse_info=1";
+		
+		$SET_buttons = $this->wire('modules')->get("InputfieldFieldset");
+		$SET_buttons->label = __("Actions");
+		$SET_buttons->icon = "fa-mouse-pointer";
+		$wrapper->add($SET_buttons);
 
+			$f = $this->wire('modules')->get("InputfieldButton");
+			$f->attr('name', 'create_user');
+			$f->attr('href', "{$thisUrl}&test=123");
+			$f->class = "uk-button uk-button-primary uk-margin-right";
+			$f->value = 'Button';
+			$SET_buttons->add($f);
 
+		// render fieldset
+		$inputfields->add($SET_buttons);
 
-		// render fields
+		
+		
+		//
+		// Render Fields
+		//
 		return $inputfields;
 
 

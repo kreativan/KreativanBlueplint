@@ -17,8 +17,18 @@
 class KreativanBlueprintConfig extends ModuleConfig {
 
 	public function getInputfields() {
-		$inputfields = parent::getInputfields();
-
+		
+		/* =========================================================== 
+			Run some code
+		=========================================================== */
+		
+		if($this->input->get->test) {
+			// Do something
+		}
+	
+		/* =========================================================== 
+			Options Arrays
+		=========================================================== */
 
 		// create templates options array
 		$templatesArr = array();
@@ -31,8 +41,13 @@ class KreativanBlueprintConfig extends ModuleConfig {
 		foreach($this->pages->get("/")->children("include=hidden") as $p) {
 			$pagesArr["$p"] = $p->title;
 		}
-
-
+		
+	
+		/* =========================================================== 
+			Config Fields
+		=========================================================== */
+	
+		$inputfields = parent::getInputfields();
 		$wrapper = new InputfieldWrapper();
 
 
@@ -75,18 +90,29 @@ class KreativanBlueprintConfig extends ModuleConfig {
 		 */
 		
 		$thisUrl = "edit?name=KreativanBlueprint&collapse_info=1";
-		
+			
 		$SET_buttons = $this->wire('modules')->get("InputfieldFieldset");
 		$SET_buttons->label = __("Actions");
 		$SET_buttons->icon = "fa-mouse-pointer";
 		$wrapper->add($SET_buttons);
-
+			
+			// Button
 			$f = $this->wire('modules')->get("InputfieldButton");
 			$f->attr('name', 'create_user');
 			$f->attr('href', "{$thisUrl}&test=123");
 			$f->class = "uk-button uk-button-primary uk-margin-right";
 			$f->value = 'Button';
 			$SET_buttons->add($f);
+			
+			// Markup - Can use <a> and modalConfirm()
+			$f = $this->wire('modules')->get("InputfieldMarkup");
+			$f->value = "
+				<a class='uk-button uk-button-primary' href='{$thisUrl}&test=123' onclick='modalConfirm()'>
+					Import Cities
+				</a>
+			";
+			$buttons_set->add($f);
+			
 
 		// render fieldset
 		$inputfields->add($SET_buttons);

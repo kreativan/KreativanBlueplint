@@ -95,9 +95,13 @@
 	</table>
 </form>
 
-<?= $this_module->items()->renderPager(); ?>
+<?php
+// Pagination
+echo $this_module->items()->renderPager(); 
+?>
 
 <?php
+// No items
 if($this_module->items()->count < 1) echo "<div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
 ?>
 

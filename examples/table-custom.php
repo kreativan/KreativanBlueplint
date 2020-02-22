@@ -91,6 +91,12 @@
 
 			<?php endforeach;?>
 		</tbody>
+		
+		<?php if($this_module->items()->count < 1) :?>
+       <tr>
+         <td colspan="100%" class="uk-text-center uk-text-muted">No items to display</td>
+       </tr>
+     <?php endif;?>
 
 	</table>
 </form>
@@ -99,12 +105,6 @@
 // Pagination
 echo $this_module->items()->renderPager(); 
 ?>
-
-<?php
-// No items
-if($this_module->items()->count < 1) echo "<div class='uk-padding'><h3 class='uk-margin-remove'>No items to display</h3></div>";
-?>
-
 
 <?php
 // Load Table Sorter

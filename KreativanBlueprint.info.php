@@ -36,9 +36,24 @@ $info = array(
 		'parent' => '',
 		'title' => 'Kreativan Blueprint'
     ),
+	
+	// optional extra navigation that appears in admin
+	// if you change this, you'll need to a Modules > Refresh to see changes
+	'nav' => array(
+		array(
+			'url' => '',
+			'label' => 'Kreativan UI',
+			'icon' => 'smile-o',
+		),
+		array(
+			'url' => 'subpage/',
+			'label' => 'Subpage',
+			'icon' => 'beer',
+		),
+	),
     
-    'singular' => true,
-    'autoload' => false, // need for Redirect
+  'singular' => true,
+  'autoload' => false, // need for Redirect
 	
 	// dependency
 	'requires' => "KreativanHelper",

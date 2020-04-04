@@ -25,7 +25,7 @@
         </thead>  
     <?php endif;?>  
 
-    <tbody>
+    <tbody id="ivm-sortable">
         <?php foreach($this_module->items() as $item):?>
 
             <?php
